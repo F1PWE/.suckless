@@ -1,0 +1,16 @@
+xorg-server
+xorg-xinit
+xorg-xrandr
+xorg-xsetroot
+firefox
+picom
+base-devel
+github-cli
+neovim
+man-db
+wget
+libx11
+libxft
+libxinerama
+networkmanager
+
