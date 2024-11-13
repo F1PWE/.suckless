@@ -1,3 +1,4 @@
+xcompmgr
 zsh
 xorg-server
 xorg-xinit
@@ -16,4 +17,4 @@ libxinerama
 networkmanager
 neofetch
 btop
-
+nitrogen
