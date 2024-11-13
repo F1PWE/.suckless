@@ -1,8 +1,8 @@
 # its just... suckless.
 
 ```txt
-
-Just pushing my suckless setup here so it's easy to reinstall
+Just pushing my suckless setup here 
+so it's easy to reinstall
 hehe
 ```
 
