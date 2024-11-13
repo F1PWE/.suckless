@@ -13,4 +13,6 @@ libx11
 libxft
 libxinerama
 networkmanager
+neofetch
+btop
 
