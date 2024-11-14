@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-max '/home/nimmerland/Downloads/cprogramminglanguage.png' 
+feh --no-fehbg --bg-max '$HOME/backgrounds/cprogramminglanguage.png' 
