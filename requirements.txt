@@ -17,4 +17,3 @@ libxinerama
 networkmanager
 neofetch
 btop
-nitrogen
