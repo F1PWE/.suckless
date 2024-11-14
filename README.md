@@ -10,9 +10,15 @@ Just dumping my suckless config here so I can easily reinstall it later.
 
 I will update this later when I upload the script to my personal website.
 
+
+```sh
+wget wowmypersonalwebsite.net/setup.sh && sh ~/setup.sh
+```
+
+
 ## Customize it
 
-Feel free to fork this and tweak it to your liking. It's all about making it work for you.
+Feel free to fork this and tweak it to your liking. It's all about making it work for you. 
 
 ## Contribute
 
