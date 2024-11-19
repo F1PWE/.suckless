@@ -1,2 +1,7 @@
 #!/bin/sh
-feh --no-fehbg --bg-max "$HOME/backgrounds/cprogramminglanguage.png"
+if [ -f "$HOME/backgrounds/cprogramminglanguage.png" ]; then
+    feh --no-fehbg --bg-max "$HOME/backgrounds/cprogramminglanguage.png"
+else
+    echo "Wallpaper not found!"
+    exit 1
+fi

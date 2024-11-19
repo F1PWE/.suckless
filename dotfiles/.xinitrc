@@ -6,17 +6,8 @@ sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # merge in defaults and keymaps
-
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -24,40 +15,28 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-# start some nice programs
+# Start basic X services
+xsetroot -cursor_name left_ptr &  # Set default cursor
+setxkbmap -layout us &            # Set keyboard layout
+xset r rate 300 50 &             # Set keyboard repeat rate
+xset s off -dpms &               # Disable screen saver
 
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
+# Load profile
+[ -f ~/.profile ] && . ~/.profile
 
-source /home/nimmerland/.profile
+# Start background services
+xcompmgr &                      # Simple compositor for transparency
+sh ~/.fehbg &                   # Set wallpaper
 
-cd ~
+# Start status bar
+slstatus &
 
-sh ~/comp.sh
-#st -e zsh &
-dmenu_run &
-
-while true; do
-	dwm >/dev/null 2>&1
-done
-
+# Start window manager
 exec dwm
