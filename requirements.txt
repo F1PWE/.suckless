@@ -18,3 +18,17 @@ networkmanager
 neofetch
 btop
 feh
+pulseaudio
+pulseaudio-alsa
+pulsemixer
+alsa-utils
+mpv
+nsxiv
+mupdf
+ranger
+unzip
+unrar
+rsync
+neomutt
+mpd
+ncmpcpp
