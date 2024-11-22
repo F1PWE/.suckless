@@ -38,5 +38,7 @@ sh ~/.fehbg &                   # Set wallpaper
 # Start status bar
 slstatus &
 
-# Start window manager
-exec dwm
+# Start window manager with restart loop
+while true; do
+    dwm >/dev/null 2>&1
+done
