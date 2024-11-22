@@ -31,12 +31,17 @@ xset s off -dpms &               # Disable screen saver
 # Load profile
 [ -f ~/.profile ] && . ~/.profile
 
+# Start audio
+pulseaudio --start &
+
 # Start background services
 xcompmgr &                      # Simple compositor for transparency
-sh ~/.fehbg &                   # Set wallpaper
 
 # Start status bar
 slstatus &
+
+# Set wallpaper after compositor
+sh ~/.fehbg &                   # Set wallpaper
 
 # Start window manager with restart loop
 while true; do

@@ -31,6 +31,10 @@ chmod +x setup.sh
 - Development: base-devel, github-cli, neovim
 - Utilities: btop, neofetch, man-db
 - Browser: firefox
+- Audio: pulseaudio, pulsemixer, mpd, ncmpcpp
+- Media: mpv (video), nsxiv (images), mupdf (pdf)
+- Files: ranger (file manager), unzip, unrar, rsync
+- Mail: neomutt
 
 ## requirements
 
@@ -40,13 +44,43 @@ chmod +x setup.sh
 
 ## keybindings
 
+### window manager (dwm)
 ```
-[Win] + [Return]    Launch terminal
-[Win] + [W]         Launch Firefox
-[Win] + [P]         Open dmenu
-[Win] + [Q]         Kill window
-[Win] + [J]         Change window focus
-[Win] + [1-9]       Switch workspace
+[Win] + [Return]          Launch terminal
+[Win] + [w]               Launch Firefox
+[Win] + [p]               Open dmenu
+[Win] + [b]               Toggle bar
+[Win] + [j/k]             Focus next/previous window
+[Win] + [h/l]             Decrease/increase master size
+[Win] + [i/d]             Add/remove master windows
+[Win] + [q]               Kill window
+[Win] + [t]               Tiling mode
+[Win] + [f]               Floating mode
+[Win] + [m]               Monocle mode
+[Win] + [space]           Toggle between layouts
+[Win] + [shift] + [space] Toggle floating
+[Win] + [-/=]             Decrease/increase gaps
+[Win] + [shift] + [=]     Reset gaps
+[Win] + [1-9]             Switch to workspace
+[Win] + [shift] + [1-9]   Move window to workspace
+[Win] + [shift] + [q]     Quit dwm
+```
+
+### terminal (st)
+```
+[Ctrl] + [Shift] + [c]  Copy
+[Ctrl] + [Shift] + [v]  Paste
+[Ctrl] + [Shift] + [y]  Copy selected text
+[Ctrl] + [Shift] + [PageUp]    Zoom in
+[Ctrl] + [Shift] + [PageDown]  Zoom out
+[Ctrl] + [Shift] + [Home]      Reset zoom
+```
+
+### mouse controls
+```
+[Win] + [Left Click]    Move window
+[Win] + [Right Click]   Resize window
+[Win] + [Middle Click]  Toggle floating
 ```
 
 ## about
