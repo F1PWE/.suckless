@@ -116,7 +116,7 @@ for program in dwm st slstatus dmenu; do
     cd $HOME/.my_dwm/.suckless/$program || error_exit "Failed to enter $program directory"
     make clean
     make || error_exit "Failed to compile $program"
-    sudo make PREFIX=$HOME/.local/ install || error_exit "Failed to install $program"
+    make PREFIX=$HOME/.local/ install || error_exit "Failed to install $program"
     success_msg "$program compiled and installed successfully"
 done
 
@@ -147,6 +147,18 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     warning_msg "Installing oh-my-zsh..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended || error_exit "Failed to install oh-my-zsh"
 fi
+
+# Enable and start necessary services
+warning_msg "Enabling and starting services..."
+sudo systemctl enable NetworkManager || error_exit "Failed to enable NetworkManager"
+sudo systemctl start NetworkManager || error_exit "Failed to start NetworkManager"
+
+# Start pulseaudio for current user
+pulseaudio --start || warning_msg "Failed to start pulseaudio, might need to be started manually"
+
+# Enable mpd for current user if installed
+systemctl --user enable mpd.service || warning_msg "Failed to enable mpd"
+systemctl --user start mpd.service || warning_msg "Failed to start mpd"
 
 success_msg "Installation and setup complete!"
 echo -e "${GREEN}You can now start X server with 'startx'${NC}"
