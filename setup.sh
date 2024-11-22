@@ -133,6 +133,12 @@ if ! command -v zsh &> /dev/null; then
     sudo pacman -S --needed --noconfirm zsh || error_exit "Failed to install zsh"
 fi
 
+# Set zsh as default shell if it isn't already
+if [ "$SHELL" != "/bin/zsh" ]; then
+    warning_msg "Setting zsh as default shell..."
+    chsh -s /bin/zsh $(whoami) || error_exit "Failed to set zsh as default shell"
+fi
+
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     warning_msg "Installing oh-my-zsh..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended || error_exit "Failed to install oh-my-zsh"
