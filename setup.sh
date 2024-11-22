@@ -106,6 +106,10 @@ success_msg "Backgrounds copied successfully"
 warning_msg "Sourcing .profile..."
 source $HOME/.profile
 
+# Set SHELL environment variable
+warning_msg "Setting SHELL environment variable..."
+export SHELL=/bin/zsh
+
 # Compile and install suckless tools
 warning_msg "Compiling dwm and related programs..."
 for program in dwm st slstatus dmenu; do
@@ -134,9 +138,9 @@ if ! command -v zsh &> /dev/null; then
 fi
 
 # Set zsh as default shell if it isn't already
-if [ "$SHELL" != "/bin/zsh" ]; then
+if [ "$SHELL" != "/usr/bin/zsh" ]; then
     warning_msg "Setting zsh as default shell..."
-    chsh -s /bin/zsh $(whoami) || error_exit "Failed to set zsh as default shell"
+    chsh -s $(which zsh) $(whoami) || error_exit "Failed to set zsh as default shell"
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -147,4 +151,5 @@ fi
 success_msg "Installation and setup complete!"
 echo -e "${GREEN}You can now start X server with 'startx'${NC}"
 echo -e "${YELLOW}Note: A backup of your previous configuration has been saved to $BACKUP_DIR${NC}"
+echo -e "${YELLOW}Important: Log out and log back in for all shell changes to take effect${NC}"
 
